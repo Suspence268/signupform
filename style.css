@@ -1,13 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Savate:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: 'norsebold';
+    src: url('font/norse-bold-webfont.woff2') format('woff2'),
+         url('font/norse-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
 :root#light{
     --bg-color: #f9fafc;
     --content-color: #ffffff;
     --action-color: #596d48;
     --heading-text-color: #0a0a0a;
-    --sub-text-color: #242424;
+    --sub-text-color: #3f3f3f;
     --shadow-color: #d8d8d8;
+    --input-border: #e5e7eb;
+    --input-focus-border: blue;
+    --input-invalid-border: red;
+    --alt-text-color: #ffffff;
 }
 :root#dark{
-    --primary-color: blue;
+    --bg-color: #0a0a0a;
+    --content-color: #1f1f1f;
+    --action-color: #596d48;
+    --heading-text-color: #ffffffd8;
+    --sub-text-color: #ffffff8a;
+    --shadow-color: #000000;
+    --input-border: #e5e7eb;
+    --input-focus-border: blue;
+    --input-invalid-border: red;
+    --alt-text-color: #ffffff;
 }
 body{
     margin: 0px;
@@ -20,11 +43,14 @@ aside{
     width: 600px;
     background: url("bg.jpg");
     background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
 main{
     flex: 1;
     display: flex;
     flex-direction: column;
+    font-family: 'roboto', Arial, Helvetica, sans-serif;
 }
 .section{
     flex: 1;
@@ -35,4 +61,109 @@ main{
     z-index: 1;
     background-color: var(--content-color);
     box-shadow: 0px 5px 10px var(--shadow-color);
+}
+label{
+    font-family: "roboto mono";
+    font-weight: 450;
+    font-size: 12px;
+    display: block;
+    color:var(--sub-text-color);
+}
+.form-group{
+    display: inline-block
+}
+fieldset{
+    border: 0px;
+}
+legend{
+    color: var(--heading-text-color);
+    font-size: 1.4rem;
+    font-weight: 450;
+    padding-bottom: 1rem;
+}
+form{
+    padding:1rem 2rem 2rem;
+}
+input{
+    padding: 5px 10px;
+    width: 200px;
+    border: none;
+    outline: 1px solid var(--input-border);
+    border-radius: 5px;
+    margin-right: 4em;
+}
+input:focus{
+    outline: 1px solid var(--input-focus-border);
+    box-shadow: 0px 0px 10px var(--shadow-color);
+}
+input[id$="password"]:invalid{
+    outline: 1px solid var(--input-invalid-border);
+}
+div.row:nth-of-type(2){
+    margin: 1em 0;
+}
+button{
+    font-size: 1.2rem;
+    background-color: var(--action-color);
+    color: var(--alt-text-color);
+    border: none;
+    border-radius: 5px;
+    font-family: 'roboto';
+    margin-left: calc(2rem + 12px);
+    margin-top: 2rem;
+    padding:.6rem 2.1rem;
+    font-weight: 450;
+}
+.section:last-child div{
+    color: var(--heading-text-color);
+    margin-left: calc(2rem + 12px);
+    margin-top: 2rem;
+}
+main a{
+    color: var(--action-color);
+    font-weight: bold;
+    text-decoration: none;
+}
+.logo-container{
+    background-color: #0a0a0a7c;
+    font-size: 6rem;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    font-family: 'norsebold', 'Times New Roman', Times, serif;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 12rem;
+}
+.footer{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 10px;
+    font-family: 'roboto', Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: .8rem;
+}
+.footer a{
+    color: #ffffff;
+}
+div.section:first-child{
+    color: var(--heading-text-color);
+    font-size: 1.5rem;
+    font-weight: 450;
+}
+div.section:first-child div{
+    margin-left: calc(2rem + 12px);
+    width: 700px;
+}
+div.section:first-child div:first-child{
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+}
+#mode{
+    width: 32px;
+    position: absolute;
+    left: 8px;
+    top: 8px;
 }
